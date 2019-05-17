@@ -7,7 +7,8 @@ from main import (humanize_calculator,
 
 
 @pytest.mark.parametrize('exp,out', [
-    ('3 + 6 = 9', 'three plus six equals nine'),
+    ('45++++55=10', INVALID_MESSAGE),
+    ('3+6=9', 'three plus six equals nine'),
     ('3 + 6 * 11 /   - 10 -     12 = 18', 'three plus six multiply eleven divided by minus ten minus twelve equals eighteen'),
     ('154 + 3568 = 7879', 'one hundred fifty-four plus three thousand five hundred sixty-eight equals seven thousand eight hundred seventy-nine')
 ])

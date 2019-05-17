@@ -104,6 +104,8 @@ def validation_expretion(expretion):
         elif symbol in OPERATORS:
             if tmp:
                 res.append(tmp)
+            if res[-1] in OPERATORS and symbol != '-':
+                return False
             res.append(symbol)
             tmp = ''
         else:
