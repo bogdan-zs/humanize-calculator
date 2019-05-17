@@ -15,7 +15,7 @@ DIGITS = ['zero', 'one', 'two', 'three', 'four',
 TENS = ['', '', 'twenty', 'thirty', 'forty',
         'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
 INVALID_MESSAGE = 'invalid input'
-DIGIT_REGEX = r'\d{1,7}'
+DIGIT_REGEX = r'\d{1,12}'
 MAX_LEN_NUMBER_TO_INFO = {
     3: {
         'pow10': 2,
