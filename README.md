@@ -1,4 +1,4 @@
 # humanize-calculator
 
-# Run test
+# Run tests
 ```python -m pytest```
