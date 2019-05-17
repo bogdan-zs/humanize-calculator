@@ -77,7 +77,9 @@ def humanize_number(number):
 
 
 def humanize_calculator(expretion):
-    operators_and_operands = re.split(r'\s+', expretion)
+    operators_and_operands = validation_expretion(expretion)
+    if not operators_and_operands:
+        return INVALID_MESSAGE
     res = []
 
     if not all(operators_and_operands, lambda op: op in OPERATORS or is_digit(op)):
@@ -89,3 +91,25 @@ def humanize_calculator(expretion):
         else:
             res.append(OPERATORS[op])
     return ' '.join(res)
+
+def validation_expretion(expretion):
+    if not expretion:
+        return False
+
+    res = []
+    tmp = ''
+    for symbol in expretion.replace(' ', ''):
+        if is_digit(symbol):
+            tmp += symbol
+        elif symbol in OPERATORS:
+            if tmp:
+                res.append(tmp)
+            res.append(symbol)
+            tmp = ''
+        else:
+            return False
+    if tmp:
+        res.append(tmp)
+    print(res)
+    print(expretion)
+    return res
